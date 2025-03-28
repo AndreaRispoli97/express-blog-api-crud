@@ -1,8 +1,22 @@
 const posts = require('../data/posts');
 
-function index (req, res){
+function index(req, res) {
+    console.log(req.query);
+    // const tag = req.query.tag;
+  
+    let filteredPosts = posts; 
+
+    if(req.query.tags){
+        filteredPosts = posts.filter((post) => post.tags.includes(req.query.tags))
+
+        return res.json(filteredPosts);
+    }
+
+    console.log(req.query.tags);
+    
+   // Restituisci i post filtrati in formato JSON
     res.json(posts);
-};
+  }
 
 // function show (req, res){
 //     res.send('Dettagli del dolce ' + req.params.id);
