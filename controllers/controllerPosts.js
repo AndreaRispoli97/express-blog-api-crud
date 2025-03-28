@@ -35,9 +35,27 @@ function modify (req, res){
     res.send('Modifica parziale del  dolce ' + req.params.id);
 };
 
-function destroy (req, res){
-    res.send('Eliminazione del dolce ' + req.params.id);
-};
+// function destroy (req, res){
+//     res.send('Eliminazione del dolce ' + req.params.id);
+// };
 
+function destroy(req, res) {
+    // Ottieni l'id del post dalla richiesta come fatto precedentemente
+    const id = parseInt(req.params.id);
+     // Trova l'indice del post con findIndex
+    const i = posts.findIndex(post => post.id === id);
+  //if in cui andiamo a dare un condizione "se il paramentro è diverso da -1"
+    if (i !== -1) {
+         // Rimuovi il post dall'array
+      posts.splice(i, 1);
+       // Stampa la lista aggiornata
+      console.log('Lista post aggiornata:', posts);
+       // Rispondi con stato 204 (Nessun contenuto)
+      res.status(204).send();
+    } else {
+         // Gestisci il caso di post non trovato
+        res.status(404).json({ message: 'Post non trovato' });
+      }
+}
 
 module.exports = {index, show, store, update, modify, destroy}
