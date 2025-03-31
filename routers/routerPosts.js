@@ -9,7 +9,7 @@ router.get('/:id', postsController.show);
 
 router.post('/', postsController.store);
 
-// router.put('/:id', postsController.update);
+router.put('/:id', postsController.update);
 
 // router.patch('/:id', postsController.modify);
 
