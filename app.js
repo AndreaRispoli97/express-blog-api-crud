@@ -6,6 +6,7 @@ const port = 3400
 const router = require('./routers/routerPosts');
 
 
+app.use(express.json());
 
 app.use(express.static('public'));
 

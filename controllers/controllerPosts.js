@@ -39,6 +39,7 @@ function show(req, res) {
 
 function store (req, res){
     res.send('Creazione nuovo dolce');
+    console.log(req.body);
 };
 
 function update (req, res){
