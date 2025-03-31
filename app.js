@@ -5,7 +5,7 @@ const app = express();
 const port = 3400
 const router = require('./routers/routerPosts');
 
-
+//per fare in modo di leggere il json
 app.use(express.json());
 
 app.use(express.static('public'));

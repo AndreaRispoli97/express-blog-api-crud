@@ -38,8 +38,24 @@ function show(req, res) {
   }
 
 function store (req, res){
-    res.send('Creazione nuovo dolce');
-    console.log(req.body);
+//nuovo id
+  const newId = posts[posts.length - 1].id + 1;
+  //creazione oggetto
+  const newDolce = {
+    id : newId,
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+    tags: req.body.tags
+
+  }
+
+  posts.push(newDolce);
+
+  console.log(posts);
+
+  res.status(201).json(newDolce);
+  
 };
 
 function update (req, res){
