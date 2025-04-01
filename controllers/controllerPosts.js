@@ -1,7 +1,8 @@
 const posts = require('../data/posts');
 
 function index(req, res) {
-  ciao();
+  //per far la prova con error500
+  // ciao();
   console.log(req.query);
   // const tag = req.query.tag;
 
