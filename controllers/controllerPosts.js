@@ -1,6 +1,7 @@
 const posts = require('../data/posts');
 
 function index(req, res) {
+  ciao();
   console.log(req.query);
   // const tag = req.query.tag;
 
